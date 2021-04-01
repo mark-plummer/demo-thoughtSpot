@@ -77,6 +77,7 @@
     flex-direction: column;
     margin: 0 1rem;
     list-style: none;
+    padding: 0;
 }
 
 .docs .ais-Hits-item,
