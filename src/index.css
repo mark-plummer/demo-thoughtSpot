@@ -1,0 +1,24 @@
+@import "./home.css";
+@import "./federatedSearch.css";
+
+body,
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+:root {
+  --main-color: #fff;
+  --second-color: #c6f2f1;
+  --third-color: #015463;
+}

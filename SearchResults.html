@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="shortcut icon" href="./favicon.png">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7/themes/algolia-min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="./src/indexSR.css">
+
+
+  <title>demo-citrix</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-wrapper">
+      <div class="logo-wraper">
+        <a href="./index.html">
+          <img src="./logo.png" alt="logo">
+        </a>
+        <div class="service-list-wrapper">
+          <ul>
+            <li>Products</li>
+            <li>Solutions</li>
+            <li>Customers</li>
+            <li>Resources</li>
+            <li>Partners</li>
+            <li>About Us</li>
+            <li><i class="fas fa-globe"></i></li>
+          </ul>
+        </div>
+      </div>
+      <div class="search-wrapper">
+        <div class="user-menu-wrapper">
+          <div class="ais-SearchBox-wrapper" id="search-wrapper">
+            <div class="searchbox" id="searchbox"></div>
+          </div>
+          <div class="contact">
+            <a href="">Free trial</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="banner" class="banner"></div>
+  <div class="container">
+    <div class="search-panel">
+      <div class="filter-panel">
+        <div class="filter product-filter">
+          <h4>Version (Docs)</h4>
+          <div id="refinement-list"></div>
+        </div>
+        <div class="filter applicableProduct-filter">
+          <h4>Applicable Products</h4>
+          <div id="hearderDoc"></div>
+        </div>
+        <!-- <div class="filter articleCategory-filter">
+          <h4>Article Category</h4>
+          <div id="articleCategory"></div>
+        </div>
+        <div class="filter articleType-filter">
+          <h4>Article Type</h4>
+          <div id="articleType"></div>
+        </div> -->
+        <div class="filter headers-filter">
+          <h4>Marketing Tags</h4>
+          <div id="headers"></div>
+        </div>
+      </div>
+      <div class="search-panel__results">
+        <div class="navResult">
+          <ul>
+            <li class="navDocs">Docs</li>
+            <li class="navArticles">Articles</li>
+            <!-- <li class="navForum">Forum</li> -->
+            <li class="navMarketing">Marketing</li>
+            <li class="navAnswers">Answers</li>
+          </ul>
+        </div>
+        <div id="current-refinements"></div>
+        <div class="placeholder hide">
+          <span class="line1"></span>
+          <span class="line2"></span>
+          <span class="line3"></span>
+        </div>
+        <div class="answers-wrapper hide">
+
+          <div id="docsAnswer" class="docsAnswer"></div>
+          <div id="articlesAnswer" class="articlesAnswer"></div>
+          <div id="forumAnswers" class="forumAnswers"></div>
+          <div id="marketingAnswer" class="marketingAnswer"></div>
+        </div>
+        <div class="results-wrapper">
+          <div class="article-result">
+            <h3>Articles</h3>
+            <div id="articles" class="articles"></div>
+            <div id="paginationArticles" class="pagination"></div>
+          </div>
+          <div class="docs-result">
+            <h3>Docs</h3>
+            <div id="docs" class="docs"></div>
+            <div id="paginationDocs" class="pagination"></div>
+          </div>
+          <!-- <div class="forum-result">
+            <h3>Forum</h3>
+            <div id="forum" class="forum"></div>
+            <div id="paginationForum" class="pagination"></div>
+          </div> -->
+          <div class="marketing-result">
+            <h3>Marketing</h3>
+            <div id="marketing" class="marketing"></div>
+            <div id="paginationMarketing" class="pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <div class="body1">
+    <img src="./images/body7.png" alt="">
+  </div>
+  <div class="body1">
+    <img src="./images/body8.png" alt="">
+  </div>
+
+
+  <!-- <script src="https://cdn.jsdelivr.net/algoliasearch/3.32.0/algoliasearchLite.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.17.0"></script> -->
+  <script src="./src/mainSR.js"></script>
+</body>
+
+</html>

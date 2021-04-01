@@ -1,0 +1,29 @@
+{
+  "name": "demo-citrix",
+  "version": "1.0.0",
+  "private": true,
+  "browserslist": [
+    "last 1 Chrome version"
+  ],
+  "scripts": {
+    "start": "parcel index.html SearchResults.html --port 3000",
+    "build": "parcel build index.html SearchResults.html",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "devDependencies": {
+    "babel-eslint": "10.0.3",
+    "eslint": "5.7.0",
+    "eslint-config-algolia": "13.2.3",
+    "eslint-config-prettier": "3.6.0",
+    "eslint-plugin-import": "2.19.1",
+    "eslint-plugin-prettier": "3.1.2",
+    "prettier": "1.19.1"
+  },
+  "dependencies": {
+    "algoliasearch": "^4.8.6",
+    "date-fns": "^2.19.0",
+    "instantsearch.js": "^4.19.0",
+    "parcel-bundler": "1.12.3"
+  }
+}

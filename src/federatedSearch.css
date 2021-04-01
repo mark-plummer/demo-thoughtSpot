@@ -1,0 +1,324 @@
+.federated-results-container {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+}
+
+.federated-wrapper {
+    width: 90vw;
+    height: 70vh;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 2rem;
+    overflow-y: scroll;
+    z-index: 999;
+}
+
+.close-modal {
+    position: fixed;
+    right: 2rem;
+    top: 2rem;
+    z-index: 999;
+    cursor: pointer;
+}
+.open {
+    visibility: visible;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+}
+.column {
+    position: relative;
+}
+.column h2 {
+    margin-left: 2rem;
+}
+
+.underline {
+    position: absolute;
+    height: 2px;
+    border-radius: 30px;
+    background-color: #000;
+    width: 6rem;
+    top: 3rem;
+    left: 3rem;
+}
+
+.answers {
+    width: 80%;
+    height: 7rem;
+    margin: 2rem auto;
+    font-size: 0.8rem;
+    color: black;
+    position: relative;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    background: linear-gradient(317deg, rgba(0, 0, 0, 0.1) 0%, rgba(255, 255, 255, 1) 75%);
+    padding: 1rem;
+    border: 1px solid rgb(184, 184, 184);
+}
+
+.docs .ais-Hits-list,
+.articles .ais-Hits-list,
+.forum .ais-Hits-list,
+.marketing .ais-Hits-list,
+.marketing ol {
+    flex-direction: column;
+    margin: 0 1rem;
+    list-style: none;
+}
+
+.docs .ais-Hits-item,
+.articles .ais-Hits-item,
+.forum .ais-Hits-item,
+.marketing .ais-Hits-item {
+    width: 100%;
+    font-size: 0.8rem;
+    color: black;
+    position: relative;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    list-style: none;
+    position: relative;
+}
+.docs .ais-Hits-item:hover,
+.articles .ais-Hits-item:hover,
+.forum .ais-Hits-item:hover,
+.marketing .ais-Hits-item:hover,
+.answers:hover {
+    transform: scale(1.02);
+    background-color: white;
+    transition: all 0.2s ease-in-out;
+}
+
+.dateComment-wrapper {
+    display: flex;
+    justify-content: space-between;
+    top: 0.5rem;
+}
+
+.forum .title,
+.articles .title,
+.docs .title,
+.answers .title,
+.marketing .title {
+    font-weight: bold;
+    word-wrap: break-word;
+}
+
+.forum .thread,
+.articles .thread,
+.docs .thread,
+.marketing .thread {
+    font-style: italic;
+    font-size: 0.7rem;
+    overflow: hidden;
+    max-width: 60ch;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.forum .ais-Hits--empty,
+.docs .ais-Hits--empty,
+.articles .ais-Hits--empty,
+.marketing .ais-Hits--empty {
+    color: black;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+.forum .ais-Hits--empty q,
+.docs .ais-Hits--empty q,
+.articles .ais-Hits--empty q,
+.marketing .ais-Hits--empty q {
+    font-weight: bold;
+}
+
+.answers .thread {
+    font-style: italic;
+    font-size: 0.7rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow-wrap: break-word;
+}
+
+.docs .version {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    font-size: 0.6rem;
+}
+
+.docs .product {
+    color: var(--main-color);
+}
+
+.btn-federated-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem auto;
+}
+.btn-federated {
+    border-radius: 30px;
+    color: white;
+
+    background-color: #000;
+    margin: 1rem auto;
+    text-align: center;
+    padding: 0.8rem 1.5rem;
+    position: absolute;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    font-size: 0.9rem;
+}
+.btn-federated:hover {
+    background: transparent;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 30px;
+    border: 1px solid #000;
+    color: #000;
+    transition: all 0.3s ease-in-out;
+}
+
+.fa-sort-up,
+.fa-clock,
+.fa-comments {
+    color: var(--main-color);
+}
+
+.hide {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}
+
+.show {
+    animation: appear 0.8s forwards;
+    opacity: 1;
+    visibility: visible;
+    /* display: block; */
+}
+
+.answers-wrapper h2 {
+    position: relative;
+}
+.answers-wrapper h2::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    border-radius: 30px;
+    background-color: #000;
+    width: 16rem;
+    top: 1.7rem;
+    left: 15rem;
+}
+
+.answers em {
+    color: black;
+    font-weight: bold;
+    background-color: rgba(240, 240, 2, 0.952);
+}
+
+.placeholder {
+    border-radius: 10px;
+    border: 1px solid rgb(192, 192, 192);
+    /* background-color: white; */
+    /* display: flex; */
+    flex-direction: column;
+    padding: 2rem;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3.55rem;
+    margin-bottom: 3.55rem;
+}
+.placeholder .line1,
+.placeholder .line2,
+.placeholder .line3 {
+    border-radius: 3px;
+    margin-top: 10px;
+    background-color: rgb(199, 199, 199);
+    height: 1rem;
+    position: relative;
+}
+
+.placeholder .line1 {
+    width: 60%;
+}
+
+.placeholder .line1::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -80%;
+    top: 0;
+    height: 100%;
+    width: 50px;
+    background: linear-gradient(to right, transparent 0%, #e8e8e8 50%, transparent 100%);
+    animation: load 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.placeholder .line2::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -80%;
+    top: 0;
+    height: 100%;
+    width: 70px;
+    background: linear-gradient(to right, transparent 0%, #e8e8e8 50%, transparent 100%);
+    animation: load 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.placeholder .line3::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -80%;
+    top: 0;
+    height: 100%;
+    width: 80px;
+    background: linear-gradient(to right, transparent 0%, #e8e8e8 50%, transparent 100%);
+    animation: load 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes load {
+    from {
+        left: -1%;
+    }
+    to {
+        left: 95%;
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+        display: block;
+    }
+}

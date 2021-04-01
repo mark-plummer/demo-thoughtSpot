@@ -1,0 +1,147 @@
+.header {
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+  padding: 0.5rem 1rem;
+  background: var(--main-color);
+  color: #000;
+  font-size: 1.1rem;
+}
+
+.header a {
+  color: #000;
+  text-decoration: none;
+}
+
+.header img {
+  width: 160px;
+}
+
+.header-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+.logo-wraper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.user-menu-wrapper {
+  display: flex;
+  align-items: center;
+}
+.service-list-wrapper ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+.service-list-wrapper ul li {
+  padding: 0.5rem;
+  position: relative;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.service-list-wrapper ul li::before {
+  content: "";
+  position: absolute;
+  background-color: white;
+  height: 1px;
+  width: 100%;
+  bottom: 0;
+  transform-origin: 100% 0;
+  transform: scaleX(0);
+  transition: transform 0.4s;
+}
+.service-list-wrapper ul li:hover::before {
+  transform-origin: 0 0;
+  transform: scaleX(1);
+}
+
+.contact {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin: 0 1rem;
+  font-size: 0.8rem;
+}
+
+.fa-chevron-down {
+  margin-left: 0.3rem;
+  font-size: 0.9rem;
+}
+.header-title {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.header-title::after {
+  content: " ▸ ";
+  padding: 0 0.5rem;
+}
+
+.header-subtitle {
+  font-size: 1rem;
+}
+
+.body1,
+.body1 img {
+  width: 100%;
+  margin-top: -2px;
+}
+
+.searchbox .ais-SearchBox {
+  width: 20vw;
+}
+
+.searchbox .ais-SearchBox-input {
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: background 0.3s ease-in-out;
+}
+.searchbox .ais-SearchBox-input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.95);
+  transition: background 0.3s ease-in-out;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.search-panel {
+  display: flex;
+}
+
+.search-panel__filters {
+  flex: 1;
+}
+
+.search-panel__results {
+  flex: 3;
+}
+
+.ais-Highlight-highlighted {
+  color: inherit;
+  font-size: inherit;
+}
+
+#pagination {
+  margin: 2rem auto;
+  text-align: center;
+}
