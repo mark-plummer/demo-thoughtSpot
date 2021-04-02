@@ -196,7 +196,7 @@ export function federatedSearchHome() {
         <p class="thread">${values[0][0]._answer.extractAttribute === "description" ? values[0][0]._answer.extract : values[0][0]._highlightResult.description.value}</p>
         </a>`
         } else if (articleScore > docScore && articleScore > marketingScore) {
-          index.innerHTML = "from our Articles"
+          index.innerHTML = "from our University platform"
           answers.innerHTML = ` <a href="./SearchResults.html">
           <p class="title">${values[1][0]._answer.extractAttribute === "title" ? values[1][0]._answer.extract : values[1][0]._highlightResult.title.value}</p>
           <p class="thread">${values[1][0]._answer.extractAttribute === "description" ? values[1][0]._answer.extract : values[1][0]._highlightResult.description.value}</p>

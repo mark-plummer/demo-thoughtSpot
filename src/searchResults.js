@@ -497,20 +497,20 @@ export function searchResults() {
         window.clearTimeout(timer);
         let query = e.target.value
         console.log(query)
-        // if (!answersWrapper.classList.contains('show')) {
-        //     resultWrapper.classList.add('movedown')
-        //     placeholder.classList.add('show')
-        //     placeholder.style.display = 'flex'
-        //     placeholder.classList.remove('hide')
-        // }
+        if (!answersWrapper.classList.contains('show')) {
+            resultWrapper.classList.add('movedown')
+            placeholder.classList.add('show')
+            placeholder.style.display = 'flex'
+            placeholder.classList.remove('hide')
+        }
         timer = window.setTimeout(() => {
             if (query !== "") {
                 fetchDocs(query)
                 fetchArticles(query)
                 // fetchForum(query)
                 fetchMarketing(query)
-                // answersWrapper.classList.add('show')
-                // answersWrapper.classList.remove('hide')
+                answersWrapper.classList.add('show')
+                answersWrapper.classList.remove('hide')
             } else if (query === "") {
                 answersWrapper.classList.remove('show')
                 answersWrapper.classList.add('hide')

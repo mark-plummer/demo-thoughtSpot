@@ -521,10 +521,10 @@
 
 @keyframes movedown {
     0% {
-        transform: translate3d(0, -7rem, 0);
+        transform: translate3d(0, 0rem, 0);
     }
     100% {
-        transform: translate3d(0, 2rem, 0);
+        transform: translate3d(0, 5rem, 0);
     }
 }
 
