@@ -496,10 +496,6 @@ export function searchResults() {
     }
 
     function noResult(query) {
-        console.log(search.renderState)
-        let sectionsDoc = document.querySelector('.docs-result .ais-Hits--empty')
-        let sectionsArticle = document.querySelector('.article-result .ais-Hits--empty')
-        let sectionsMarket = document.querySelector('.marketing-result .ais-Hits--empty')
         let doc = document.querySelector('.docs-result')
         let article = document.querySelector('.article-result')
         let marketing = document.querySelector('.marketing-result')
@@ -530,7 +526,7 @@ export function searchResults() {
         }
 
         if (search.renderState.marketing.hits.hits.length === 0 && search.renderState.articles.hits.hits.length === 0 && search.renderState.docs.hits.hits.length === 0) {
-            noResult.innerHTML = ` <p>Sorry we have no answers for <span>${query} </span>please try another query</p>`
+            noResult.innerHTML = ` <p>Sorry we have no answer for <span>${query} </span>please try another query</p>`
         } else {
             noResult.innerHTML = ""
         }
