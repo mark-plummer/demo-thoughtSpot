@@ -93,10 +93,18 @@
     font-size: 1rem;
 }
 
+.noResult span {
+    font-weight: bold;
+}
+
 .body1,
 .body1 img {
     width: 100%;
     margin-top: -2px;
+}
+
+.body7 {
+    margin-top: 5rem;
 }
 
 .searchbox .ais-SearchBox {
@@ -268,6 +276,22 @@
 
 .tagList {
     color: rgb(175, 175, 175);
+    font-size: 0.6rem;
+}
+
+.tagAnswer {
+    position: absolute;
+    top: 0rem;
+    right: 0.1rem;
+    border-radius: 30px;
+    color: var(--main-color);
+    background-color: transparent;
+    border: 1px solid var(--main-color);
+    margin: 1rem 0.5rem;
+    text-align: center;
+    padding: 0.2rem 0.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
     font-size: 0.6rem;
 }
 

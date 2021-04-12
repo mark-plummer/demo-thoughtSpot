@@ -57,7 +57,6 @@ export function searchResults() {
 
 
     function displayResultsDocs(hits) {
-        console.log(hits)
         const docsAnswers = document.querySelector('#docsAnswer');
         const placeholder = document.querySelector('.placeholder')
         placeholder.classList.add('hide')
@@ -66,6 +65,7 @@ export function searchResults() {
 
         docsAnswers.innerHTML = ` <ul class="ais-Hits-list">${hits.map((hit) => `<li 
         class="ais-Hits-item">
+        <p class="tagAnswer">Docs</p>
         <p class="title">${hit._answer.extractAttribute === "title" ? hit._answer.extract : hit._highlightResult.title.value}</p>
         <p class="thread">${hit._answer.extractAttribute === "description" ? hit._answer.extract : hit._highlightResult.description.value}</p></li>`).join('')}
         
@@ -102,7 +102,6 @@ export function searchResults() {
     }
 
     function displayResultsMarketing(hits) {
-        console.log(hits)
         const marketingAnswers = document.querySelector('#marketingAnswer');
         const placeholder = document.querySelector('.placeholder')
         placeholder.classList.add('hide')
@@ -110,6 +109,7 @@ export function searchResults() {
         // placeholder.style.display = 'none'
 
         marketingAnswers.innerHTML = ` <ul class="ais-Hits-list">${hits.map((hit) => `<li class="ais-Hits-item"><a href="./SearchResults.html">
+        <p class="tagAnswer">Marketing</p>
         <p class="title">${hit._answer.extractAttribute === "title" ? hit._answer.extract : hit._highlightResult.title.value}</p>
         <p class="thread">${hit._answer.extractAttribute === "description" ? hit._answer.extract : hit._highlightResult.description.value}</p>
         </a></li>`).join('')}
@@ -147,7 +147,7 @@ export function searchResults() {
     }
 
     function displayResultsrticles(hits) {
-        console.log(hits)
+
         const artcilesAnswers = document.querySelector('#articlesAnswer');
         const placeholder = document.querySelector('.placeholder')
         placeholder.classList.add('hide')
@@ -155,7 +155,7 @@ export function searchResults() {
         // placeholder.style.display = 'none'
 
         artcilesAnswers.innerHTML = ` <ul class="ais-Hits-list">${hits.map((hit) => `<li class="ais-Hits-item">
-
+        <p class="tagAnswer">Articles</p>
         <p class="title">${hit._answer.extractAttribute === "title" ? hit._answer.extract : hit._highlightResult.title.value}</p>
         <p class="thread">${hit._answer.extractAttribute === "description" ? hit._answer.extract : hit._highlightResult.description.value}</p></li>`).join('')}
 
@@ -355,37 +355,6 @@ export function searchResults() {
                 container: '#paginationDocs',
             })
         ]),
-        // index({
-        //     indexName: 'crawler_citrix_forums_digital_workspace',
-        //     indexId: 'forum',
-        // }).addWidgets([
-        //     customConfigure({
-        //         container: document.querySelector('#forum'),
-        //         searchParameters: {
-        //             hitsPerPage: 5,
-        //         },
-        //     }),
-        //     currentRefinements({
-        //         container: '#current-refinements',
-        //     }),
-        //     hits({
-        //         container: '#forum',
-        //         templates: {
-        //             item: hit => `
-        //     <div class="dateComment-wrapper">
-        //           <p><i class="fas fa-comments"></i>${formatComment(hit.replyCount)}</p>
-        //             <p><i class="far fa-clock"></i> ${formatDate(hit.createdDate)}</p> 
-        //             <p><i class="fas fa-sort-up"></i> ${hit.upvoteCount}</p>
-        //           </div>
-        //           <p class="title">${hit._highlightResult.title.value}</p>
-        //           <p class="thread">${hit._highlightResult.threadContent.value}</p>
-
-        // `,
-        //         },
-        //     }),
-        //     pagination({
-        //         container: '#paginationForum',
-        //     })
 
         index({
             indexName: 'crawler_thoughtspot_marketing',
@@ -477,10 +446,8 @@ export function searchResults() {
     let timer,
         timeoutVal = 1000;
 
-    console.log(searchbox.value)
     searchbox.addEventListener('keypress', handleKeyPress);
     searchbox.addEventListener('keyup', handleKeyUp);
-
     close.addEventListener('click', handleNoQuery)
 
     function handleNoQuery(e) {
@@ -496,7 +463,7 @@ export function searchResults() {
     function handleKeyUp(e) {
         window.clearTimeout(timer);
         let query = e.target.value
-        console.log(query)
+        noResult(query)
         if (!answersWrapper.classList.contains('show')) {
             resultWrapper.classList.add('movedown')
             placeholder.classList.add('show')
@@ -519,6 +486,7 @@ export function searchResults() {
                 // placeholder.style.display = 'none'
                 placeholder.classList.add('hide')
 
+
             }
         }, timeoutVal);
     }
@@ -527,8 +495,49 @@ export function searchResults() {
         window.clearTimeout(timer);
     }
 
+    function noResult(query) {
+        console.log(search.renderState)
+        let sectionsDoc = document.querySelector('.docs-result .ais-Hits--empty')
+        let sectionsArticle = document.querySelector('.article-result .ais-Hits--empty')
+        let sectionsMarket = document.querySelector('.marketing-result .ais-Hits--empty')
+        let doc = document.querySelector('.docs-result')
+        let article = document.querySelector('.article-result')
+        let marketing = document.querySelector('.marketing-result')
+        let noResult = document.querySelector('.noResult')
+        const close = document.querySelector('.searchbox .ais-SearchBox-resetIcon')
+
+
+        close.addEventListener('click', (e) => {
+            doc.classList.remove('hide')
+            article.classList.remove('hide')
+            marketing.classList.remove('hide')
+        })
+
+        if (search.renderState.docs.hits.hits.length === 0) {
+            doc.classList.add('hide')
+        } else {
+            doc.classList.remove('hide')
+        }
+        if (search.renderState.articles.hits.hits.length === 0) {
+            article.classList.add('hide')
+        } else {
+            article.classList.remove('hide')
+        }
+        if (search.renderState.marketing.hits.hits.length === 0) {
+            marketing.classList.add('hide')
+        } else {
+            marketing.classList.remove('hide')
+        }
+
+        if (search.renderState.marketing.hits.hits.length === 0 && search.renderState.articles.hits.hits.length === 0 && search.renderState.docs.hits.hits.length === 0) {
+            noResult.innerHTML = ` <p>Sorry we have no answers for <span>${query} </span>please try another query</p>`
+        } else {
+            noResult.innerHTML = ""
+        }
+
+    }
+
     answersBtn.addEventListener('click', (e) => {
-        console.log(e)
         if (answersWrapper.classList.contains('hide')) {
             resultWrapper.classList.add('movedown')
             answersWrapper.classList.add('show')
