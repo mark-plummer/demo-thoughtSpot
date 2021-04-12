@@ -89,7 +89,6 @@ export function filteringOptions() {
     //     }
     // }
     function articles(e) {
-        console.log(e)
         if (!articlesBtn.classList.contains('active')) {
             if (!docsBtn.classList.contains('active')) {
                 docsResult.classList.add('hide')
