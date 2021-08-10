@@ -1,3 +1,53 @@
+@font-face {
+  font-family: "Optimo-Plain";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local("Optimo Thin"),
+    local("Optimo-Thin"),
+    url(Plain-Thin.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Optimo-Plain";
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local("Optimo Medium"),
+    local("Optimo-Medium"),
+    url(Plain-Medium.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Optimo-Plain";
+  font-style: italic;
+  font-weight: 400;
+  src:
+    local("Optimo Italic"),
+    local("Optimo-Italic"),
+    url(Plain-RegularIta.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Optimo-Plain";
+  font-style: italic;
+  font-weight: 500;
+  src:
+    local("Optimo-Medium-Italic"),
+    local("Optimo-Medium-Italic"),
+    url(Plain-MediumIta.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Optimo-Plain";
+  font-style: normal;
+  font-weight: 600;
+  src:
+    local("Optimo-Bold"),
+    local("Optimo-Bold"),
+    url(Plain-Bold.woff) format("woff");
+}
+
 .header {
     display: flex;
     align-items: center;
@@ -127,8 +177,11 @@
 }
 
 .container {
-    max-width: 90vw;
-    margin: 0 auto;
+    max-width: 78vw;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
     padding: 1rem;
 }
 
@@ -142,7 +195,7 @@
 }
 
 .search-panel__results {
-    justify-self: center;
+    justify-self: left;
     width: 80%;
     position: relative;
 }
@@ -156,7 +209,7 @@
 }
 
 .article-result {
-    margin-top: 8rem;
+    margin-top: 0rem;
 }
 
 .docs .ais-Hits-list,
@@ -168,7 +221,10 @@
 .articlesAnswer .ais-Hits-list,
 .forumAnswers .ais-Hits-list {
     flex-direction: column;
-    margin: 0 1rem;
+    margin-top: 0px;
+    margin-right: 1rem;
+    margin-bottom: 0px;
+    margin-left: 0px;
 }
 
 .docs .ais-Hits-item,
@@ -226,6 +282,7 @@
     font-weight: bold;
     color: black;
     text-decoration: none;
+    font-family: "Optimo-Plain", sans-serif;
 }
 
 .marketing a,
@@ -250,6 +307,7 @@
     overflow-wrap: break-word;
     text-decoration: none;
     color: black;
+    font-family: "Optimo-Plain", sans-serif;
 }
 
 .forumAnswers em,
@@ -265,10 +323,11 @@
     right: 0.5rem;
     top: 0.5rem;
     padding: 0.2rem 0.5rem;
-    background-color: black;
+    background-color: #4e55fd;
     color: white;
     border-radius: 30px;
     font-size: 0.6rem;
+    font-family: "Optimo-Plain", sans-serif;
 }
 .docs .product {
     color: var(--main-color);
@@ -326,6 +385,8 @@
 .filter h4 {
     margin-top: 2rem;
     font-size: 1.1rem;
+    color: #4e55fd;
+    font-family: "Optimo-Plain", sans-serif;
 }
 
 .filter .ais-RefinementList-label,
@@ -333,11 +394,13 @@
 .filter .ais-RefinementList-count {
     font-size: 0.8rem !important;
     color: black;
+    font-family: "Optimo-Plain", sans-serif;
 }
 
 .filter .ais-RefinementList-count {
     background-color: rgba(0, 0, 0, 0.3);
     font-size: 0.6rem !important;
+    font-family: "Optimo-Plain", sans-serif;
 }
 
 .ais-RefinementList-showMore {
@@ -351,6 +414,7 @@
     text-decoration: none;
     transition: all 0.3s ease-in-out;
     font-size: 0.8rem;
+    font-family: "Optimo-Plain", sans-serif;
 }
 .ais-RefinementList-showMore:focus {
     border-radius: 30px;
@@ -382,12 +446,13 @@
 }
 
 #current-refinements {
-    height: 3rem;
+    height: 0rem;
 }
 
 .navResult ul {
     display: flex;
     list-style: none;
+    margin-left: -48px;
 }
 .navResult ul li {
     border-radius: 30px;
@@ -410,6 +475,8 @@
 .forum-result h3 {
     font-size: 1.5rem;
     position: relative;
+    color: #4e55fd;
+    font-family: "Optimo-Plain";
 }
 
 .article-result h3::after,
@@ -420,7 +487,7 @@
     position: absolute;
     height: 2px;
     border-radius: 30px;
-    background-color: black;
+    /* background-color: black; */
     width: 6rem;
     top: 1.7rem;
     left: 2rem;
@@ -450,7 +517,7 @@
 .pagination .ais-Pagination-item a,
 .pagination .ais-Pagination-item span {
     border: none !important;
-    font-family: "Roboto", sans-serif;
+    font-family: "Optimo-Plain", sans-serif;
     font-size: 0.8rem;
     color: black;
 }
@@ -535,7 +602,7 @@
 }
 
 .results-wrapper {
-    margin-top: 3rem;
+    margin-top: 0;
     transform: translate3d(0, -0rem, 0);
 }
 
