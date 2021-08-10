@@ -48,6 +48,10 @@
     url(Plain-Bold.woff) format("woff");
 }
 
+.ais-CurrentRefinements {
+    margin-top: -2rem;
+}
+
 .header {
     display: flex;
     align-items: center;
@@ -602,7 +606,7 @@
 }
 
 .results-wrapper {
-    margin-top: 0;
+    margin-top: 70px;
     transform: translate3d(0, -0rem, 0);
 }
 

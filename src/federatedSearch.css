@@ -1,11 +1,61 @@
+@font-face {
+  font-family: "Optimo-Plain";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local("Optimo Thin"),
+    local("Optimo-Thin"),
+    url(Plain-Thin.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Optimo-Plain";
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local("Optimo Medium"),
+    local("Optimo-Medium"),
+    url(Plain-Medium.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Optimo-Plain";
+  font-style: italic;
+  font-weight: 400;
+  src:
+    local("Optimo Italic"),
+    local("Optimo-Italic"),
+    url(Plain-RegularIta.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Optimo-Plain";
+  font-style: italic;
+  font-weight: 500;
+  src:
+    local("Optimo-Medium-Italic"),
+    local("Optimo-Medium-Italic"),
+    url(Plain-MediumIta.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Optimo-Plain";
+  font-style: normal;
+  font-weight: 600;
+  src:
+    local("Optimo-Bold"),
+    local("Optimo-Bold"),
+    url(Plain-Bold.woff) format("woff");
+}
+
 .federated-results-container {
     display: grid;
-    grid-template-columns: repeat(4, 25%);
+    grid-template-columns: repeat(3, 33%);
 }
 
 .federated-wrapper {
-    width: 90vw;
-    height: 70vh;
+    width: 70vw;
+    height: 65vh;
     position: absolute;
     top: 50%;
     right: 50%;
@@ -42,9 +92,11 @@
 }
 .column h2 {
     margin-left: 2rem;
+    font-family: "Optimo-Plain", sans-serif;
+    color: #4e55fd;
 }
 
-.underline {
+/* .underline {
     position: absolute;
     height: 2px;
     border-radius: 30px;
@@ -52,7 +104,7 @@
     width: 6rem;
     top: 3rem;
     left: 3rem;
-}
+} */
 
 .answers {
     width: 80%;
@@ -117,6 +169,7 @@
 .marketing .title {
     font-weight: bold;
     word-wrap: break-word;
+    font-family: "Optimo-Plain", sans-serif;
 }
 
 .forum .thread,
@@ -162,7 +215,7 @@
     right: 0.5rem;
     top: 0.5rem;
     padding: 0.2rem 0.5rem;
-    background-color: black;
+    background-color: #4e55fd;
     color: white;
     border-radius: 30px;
     font-size: 0.6rem;
@@ -173,7 +226,7 @@
 }
 
 .btn-federated-wrapper {
-    width: 100%;
+    width: 70vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -182,6 +235,8 @@
 .btn-federated {
     border-radius: 30px;
     color: white;
+    align-items: center;
+    font-family: "Optimo-Plain", sans-serif;
 
     background-color: #000;
     margin: 1rem auto;
@@ -224,7 +279,10 @@
 
 .answers-wrapper h2 {
     position: relative;
+    font-family: "Optimo-Plain", sans-serif;
+    color: #4e55fd;
 }
+/*
 .answers-wrapper h2::after {
     content: "";
     position: absolute;
@@ -234,7 +292,7 @@
     width: 16rem;
     top: 1.7rem;
     left: 15rem;
-}
+} */
 
 .answers em {
     color: black;
